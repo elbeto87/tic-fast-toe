@@ -23,10 +23,10 @@ def start_game():
     }
 
 
-@app.post("/make_move")
-def make_move(make_move: MakeMoveRequest):
-    logger.info(f"Player is making a move at row: {make_move.row} and column: {make_move.col}")
-    tic_tac_toe.make_player_move(make_move.row, make_move.col)
+@app.post("/make_move_request")
+def make_move(make_move_request: MakeMoveRequest):
+    logger.info(f"Player is making a move at row: {make_move_request.row} and column: {make_move_request.col}")
+    tic_tac_toe.make_player_move(make_move_request.row, make_move_request.col)
     logger.info(f"Verifying if player {tic_tac_toe.player} is a winner")
     if tic_tac_toe.is_a_winner(tic_tac_toe.player):
         return {
