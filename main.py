@@ -1,3 +1,4 @@
+from collections import Counter
 from datetime import datetime
 
 from fastapi import FastAPI
@@ -55,4 +56,16 @@ def make_move(make_move_request: MakeMoveRequest):
 def game_history():
     return {
         "game_history": get_game_history()
+    }
+
+
+@app.get("/count_of_wins")
+def count_of_player_wins():
+    game_history = get_game_history()
+    winners = [game["winner"] for game in game_history]
+    counts = Counter(winners)
+
+    return {
+        "player_wins": counts.get("X", 0),
+        "computer_wins": counts.get("O", 0)
     }
