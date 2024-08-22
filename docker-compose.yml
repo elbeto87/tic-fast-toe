@@ -1,0 +1,7 @@
+version: '3.10'
+
+services:
+  tic_fast_toe:
+    build: .
+    ports:
+      - "8000:8000"
