@@ -21,7 +21,7 @@ class MakeMoveRequest(BaseModel):
 @app.post("/")
 def start_game():
     return {
-        "message": f"Welcome to Tic Fast Toe",
+        "message": "Welcome to Tic Fast Toe",
         "board": tic_tac_toe.start_game()
     }
 
@@ -37,7 +37,7 @@ def make_move(make_move_request: MakeMoveRequest):
             "message": f"Player {tic_tac_toe.player} wins!",
             "board": tic_tac_toe.print_board()
         }
-    logger.info(f"Computer is making a random move")
+    logger.info("Computer is making a random move")
     tic_tac_toe.make_computer_move()
     logger.info(f"Verifying if player {tic_tac_toe.computer} is a winner")
     if tic_tac_toe.is_a_winner(tic_tac_toe.computer):

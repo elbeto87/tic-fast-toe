@@ -4,6 +4,7 @@ from main import app
 
 client = TestClient(app)
 
+
 def test_start_game_endpoint():
     response = client.get("/start_game")
 
