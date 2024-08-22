@@ -61,8 +61,7 @@ def game_history():
 
 @app.get("/count_of_wins")
 def count_of_player_wins():
-    game_history = get_game_history()
-    winners = [game["winner"] for game in game_history]
+    winners = [game["winner"] for game in get_game_history()]
     counts = Counter(winners)
 
     return {
