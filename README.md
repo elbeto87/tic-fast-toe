@@ -81,6 +81,21 @@ Here's how you can use the API:
     }
     ```
   
+## Usage using Docker
+
+1. **Build the Docker image**:
+    ```bash
+    docker build -t tic-fast-toe .
+    ```
+2. **Run the Docker container**:
+    ```bash
+    docker run -d -p 8000:8000 tic-fast-toe
+    ```
+3. **Stop the Docker container**:
+    ```bash
+    docker stop <container_id>
+    ```
+  
 ## Testing
 
 To run the tests, use the following command:
