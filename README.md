@@ -80,6 +80,14 @@ Here's how you can use the API:
         ]
     }
     ```
+  
+## Testing
+
+To run the tests, use the following command:
+
+```bash 
+python -m pytest
+```
 
 ## License
 
